@@ -2,6 +2,16 @@ group 'com.transistorsoft.flutter.backgroundfetch'
 version '1.0-SNAPSHOT'
 apply plugin: 'com.android.library'
 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+    }
+}
 def safeExtGet(prop, fallback) {
     rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
 }
@@ -22,6 +32,7 @@ repositories {
     maven {
         url './libs'
     }
+    google()
 }
 
 dependencies {
